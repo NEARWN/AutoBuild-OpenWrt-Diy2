@@ -81,7 +81,7 @@ jobs:
 
     - name: Configuration Customization
       env:
-        CONFIG_FILE: 'config/k2pipv6.config'
+        CONFIG_FILE: 'config/k2p.config'
       run: |
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
         chmod +x ./customize.sh && ./customize.sh
