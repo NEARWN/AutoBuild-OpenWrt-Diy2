@@ -5,7 +5,7 @@
 # Youtube Channel: https://goo.gl/fvkdwm 
 #=================================================
 
-name: OpenWrt firmware phicomm k2pipv6
+name: OpenWrt firmware phicomm k2p
 
 on: 
   release:
@@ -103,5 +103,5 @@ jobs:
     - name : Upload artifact
       uses: actions/upload-artifact@master
       with:
-        name: OpenWrt firmware phicomm k2pipv6
+        name: OpenWrt firmware phicomm k2p
         path: openwrt/bin
