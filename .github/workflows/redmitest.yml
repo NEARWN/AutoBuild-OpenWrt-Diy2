@@ -5,7 +5,7 @@
 # Youtube Channel: https://goo.gl/fvkdwm 
 #=================================================
  
-name: OpenWrt firmware redmiac2100 music
+name: OpenWrt firmware redmiac2100 test
 
 on: 
   release:
@@ -71,15 +71,15 @@ jobs:
         ./scripts/feeds update -a
         ./scripts/feeds install -a
         
-    - name: Import external feeds -unblockneteasemusic
-      working-directory: ./openwrt
-      run: |
-        git clone https://github.com/UnblockNeteaseMusic/luci-app-unblockneteasemusic.git package/music
+    #- name: Import external feeds -unblockneteasemusic
+    #  working-directory: ./openwrt
+    #  run: |
+    #    git clone https://github.com/UnblockNeteaseMusic/luci-app-unblockneteasemusic.git package/music
     #    git clone "your_github_link" package/"your_folder_name"      
 
     - name: Configuration Customization - redmiac2100
       env:
-        CONFIG_FILE: 'config/redmimusic.config'
+        CONFIG_FILE: 'config/redmitest.config'
       run: |
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
         chmod +x ./customize.sh && ./customize.sh
@@ -101,5 +101,5 @@ jobs:
     - name : Upload artifact
       uses: actions/upload-artifact@master
       with:
-        name: OpenWrt firmware redmiac2100 music
+        name: OpenWrt firmware redmiac2100 test
         path: openwrt/bin
